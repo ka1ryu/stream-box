@@ -1,0 +1,83 @@
+
+  .navbar {
+    padding: 0.3rem 1.5rem;
+  }
+
+  .hero-body{
+    background-image: url("/static/TG2a4vpMnkMRAie1581748987_1581749115.jpg");
+    height: 170px;
+  }
+  .title {
+    line-height: 2.125;
+  }
+
+.grid-auto-fill {
+  display: grid;
+  border: 1px solid #ddd;
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 1em 0 2em;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 0.3fr));
+}
+
+
+.grid-auto-fill > div {
+  padding: 10px;
+  background: #ddd;
+}
+
+.item{
+  height: 100%;
+}
+
+.box-wrapper {
+  cursor: pointer;
+  height: 100%;
+}
+.box-thumnail{
+  position: relative;
+}
+.box-label{
+  position: absolute;
+  padding: 5px 10px;
+  bottom: -5px;
+  left: 0;
+  opacity: 0.8;
+}
+.box-info {
+  padding: 5px 10px;
+}
+
+.box-info-data {
+  display: flex;
+  margin-bottom: 5px;
+}
+.data-block{
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  .grid-auto-fill{
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 1em 0 2em;
+  }
+  .grid-auto-fill > div {
+    padding: 10px;
+    background: #ddd;
+    margin-bottom: 1em;
+  }
+}
+
+
+/* 
+mediascreenに関してはbulmacssに直接あてること
+タブレット以上のスクリーンのnavにpadding: 1rem 1.5rem;
+*/
