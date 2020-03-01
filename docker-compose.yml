@@ -2,8 +2,7 @@ version: '3.4'
 
 volumes:
   sugoi_socket:
-  django.db.volume:
-    name: django.db.volume
+      
 
 services:
   nginx:
@@ -20,16 +19,20 @@ services:
     depends_on:
       - web
 
-  db:
-    image: mariadb:10
-    container_name: django.db
+  mysql:
+    build: ./sql
+    container_name: django.mysql
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
       TZ: 'Asia/Tokyo'
+    command:
+      mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - django.db.volume:/var/lib/mysql
+      - ./sql/mysql_data:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
 
   web:
@@ -43,6 +46,6 @@ services:
     expose:
       - "8001"
     depends_on:
-      - db
+      - mysql
 
     
