@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+{% block bread-crumb %}
+{% include 'base/bread-crumb.html' %}
+{% endblock %}
+{% block main-contents %}
+<div class="main-contents">
+  <h1 class="is-size-3 caption">人気ランキング</h1>
+  <div class="tabs is-right">
+    <ul>
+      <li class="is-active"><a>Pictures</a></li>
+      <li><a>Music</a></li>
+      <li><a>Videos</a></li>
+      <li><a>Documents</a></li>
+    </ul>
+  </div>
+  <div class="">
+    {% if page_obj %}
+    <ul class="box-list grid-auto-fill">
+      {% for record in page_obj %}
+      <li class="item" style="list-style: none;">
+        <a class="box-wrapper" href="/search/">
+          <div class="box-thumnail">
+            <img
+              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+          </div>
+          <div class="box-info content is-small">
+            <h3 style="margin-bottom: 5px;">{{record.title}}</h3>
+            <div class="box-info-data">
+              <div class="data-block">
+                <span class="tag is-light">視聴回数</span>
+                <span>{{record.total_view}}</span>
+                <span class="tag is-light">登録者数</span>
+                <span>{{record.subscriber_num}}</span>
+              </div>
+            </div>
+            <div class="box-info-data">
+              <span class="tag is-light">投稿本数</span>
+              <span>{{record.total_video}}</span>
+            </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No records are available.</p>
+    {% endif %}
+  </div>
+</div>
+{% include 'base/pagenation.html' %}
+{% endblock main-contents%}

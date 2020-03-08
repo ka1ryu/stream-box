@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+PAGE_PER_ITEM = 25
 
 # Application definition
 
@@ -118,3 +118,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = '/static'
+

@@ -10,13 +10,13 @@
   {% load static %}
   <script src="{% static 'static.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'static.css' %}">
-  <link rel="shortcut icon" href="{% static 'favicon_2.png' %}" type="image/png">
+  <link rel="shortcut icon" href="{% static 'favicon3.png' %}" type="image/png">
 </head>
 
 <body>
   <!-- header -->
   <div class="container">
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top soft-shadow" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="http://127.0.0.1:8000/">
           <img src="{% static 'banner2.jpg' %}">
@@ -47,17 +47,8 @@
       </div>
     </nav>
   </div>
-  <!-- nav -->
-  <div class="" style="position: relative; top: 7px; padding: 0 24px;">
-    <div class="tabs" style="margin-bottom: 0.5em;">
-      <ul>
-        <li><a>Ranking</a></li>
-        <li><a>Gamer</a></li>
-        <li><a>Video</a></li>
-        <li><a>Game</a></li>
-      </ul>
-    </div>
-
+  <!-- breadcumb -->
+  <div class="container" style="margin: 1rem 1.5rem;">
     <nav class="breadcrumb has-succeeds-separator is-small" aria-label="breadcrumbs">
       <ul>
         <li><a href="#">Bulma</a></li>
@@ -66,18 +57,27 @@
         <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
       </ul>
     </nav>
+  </div>
 
   </div>
   <!-- main contents -->
-  <section class="section" style="height: 1000px;">
-    <h3>auto-fill</h3>
+  <div class="main-contents">
+    <h1 class="is-size-3 caption">人気ランキング</h1>
+    <div class="tabs is-right">
+      <ul>
+        <li class="is-active"><a>Pictures</a></li>
+        <li><a>Music</a></li>
+        <li><a>Videos</a></li>
+        <li><a>Documents</a></li>
+      </ul>
+    </div>
     <div class="">
       <ul class="box-list grid-auto-fill">
         <li class="item" style="list-style: none;">
           <a class="box-wrapper" href="/about">
             <div class="box-thumnail">
               <img
-                src="https://resize-kinarino-mall.k-img.com/cv15111/q=85,progressive=y,rmprof=y,autoorient=y,jpeghint=y,dw=640,dh=480/item_images/000/689/958/67b6d606adee73e95f5751f79b5f986ae9b3fceb.jpg?1575451297">
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
             </div>
             <div class="box-info content is-small">
               <h3 style="margin-bottom: 5px;">はじめしゃちょー</h3>
@@ -144,20 +144,105 @@
             </div>
           </a>
         </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
+        <li class="item" style="list-style: none;">
+          <a class="box-wrapper" href="/about">
+            <div class="box-thumnail">
+              <img
+                src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            </div>
+            <div class="box-info">
+              <h3>hoge</h3>
+              <span>title</span>
+            </div>
+          </a>
+        </li>
       </ul>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
-      <div>Item 4</div>
     </div>
-  </section>
+  </div>
 
   <footer class="footer">
     <div class="content has-text-centered">
