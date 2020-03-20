@@ -103,21 +103,35 @@
 }
 
 @media screen and (max-width: 480px) {
-  .grid-auto-fill{
-    display: block;
+  .navbar {
+    padding: 0 0;
+}
+  .grid-auto-fill {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
     padding: 10px;
-    border: 1px solid #ddd;
     margin: 1em 0 2em;
+    overflow: hidden;
+    justify-content: space-between;
   }
   .grid-auto-fill > div {
     padding: 10px;
-    background: #ddd;
-    margin-bottom: 1em;
+    background: #fdfdfd;
+  }
+
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
   .main-contents {
     padding: 1rem 1.5rem;
     display: block;
+  }
+
+  .caption {
+    position: relative;
+    top: 0px;
   }
 }
 
