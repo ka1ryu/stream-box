@@ -17,3 +17,5 @@ jobs:
         private-key: ${{ secrets.streambox_ssh }} # 必須
         public-key: ${{ secrets.SSH_KEY_PUBLIC }} # 必須
         known-hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
+    - name: run deploy script
+      run: bash touch hoge.txt
