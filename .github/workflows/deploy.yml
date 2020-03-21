@@ -18,4 +18,4 @@ jobs:
         public-key: ${{ secrets.SSH_KEY_PUBLIC }} # 必須
         known-hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
     - name: run deploy script
-      run: rsync docker-compose.yml ryo@34.83.27.41
+      run: ssh -p ${{ secrets.SSH_PORT }}  ryo@${{ secrets.SSH_HOST }} -i ${{ secrets.streambox_ssh }}
