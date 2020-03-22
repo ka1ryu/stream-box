@@ -18,4 +18,4 @@ jobs:
         public-key: ${{ secrets.SSH_KEY_PUBLIC }} # 必須
         known-hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
     - name: run deploy script
-      run: ssh -p ${{ secrets.SSH_PORT }}  ryo@${{ secrets.SSH_HOST }} -i ${{ secrets.streambox_ssh }}
+      run: ssh -p ${{ secrets.SSH_PORT }}  ryo@${{ secrets.SSH_HOST }} -i .ssh/id_rsa
