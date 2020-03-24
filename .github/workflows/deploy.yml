@@ -18,4 +18,4 @@ jobs:
         public-key: ${{ secrets.SSH_KEY_PUBLIC }} # 必須
         known-hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
     - name: run deploy script
-      run: bash deploy.sh
+      run: ssh ryo@34.83.27.41 -i ~/.ssh/id_rsa
