@@ -17,5 +17,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }} # 必須
         known_hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
         name: streambox-instance1-ssh
+    - name: test script
+      run: cat ~/.ssh/streambox-instance1-ssh
     - name: run deploy script
       run: ssh ryo@34.83.27.41 "touch hoge.py"
