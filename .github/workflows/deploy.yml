@@ -17,9 +17,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }} # 必須
         known_hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
         name: streambox-instance1-ssh
-    - name: chmod 600
-      run: chmod 600 ~/.ssh/streambox-instance1-ssh
-    - name: check chmod
-      run: ls -l ~/.ssh
-    - name: test script
-      run: ssh ryo@34.83.27.41 -i ~/.ssh/streambox-instance1-ssh "touch hoge.py"
+    - name: ssh key generate
+      run: echo ”$SSH_PRIVATE_KEY” ＞ key ＆＆ chmod 600 key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+    - name: migrate database
+      run: ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ryo@34.83.27.41 ’touch hoge.py’
