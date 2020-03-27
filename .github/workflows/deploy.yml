@@ -17,10 +17,10 @@ jobs:
         private-key: ${{ secrets.SSH_KEY }} # 必須
         public-key: ${{ secrets.SSH_KEY_PUBLIC }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
-        name: streambox-instance1-ssh
+        name: testpem
     - name: ssh keygen
       run: ssh-keygen -R 34.83.27.41
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
     - name: migrate database
-      run: ssh ka1ryu@34.83.27.41 -o 'StrictHostKeyChecking no' 'touch hoge.py'
+      run: ssh ka1ryu@34.83.27.41 -i ~/.ssh/testpem -o 'StrictHostKeyChecking no' 'touch hoge.py'
