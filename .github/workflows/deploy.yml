@@ -23,4 +23,4 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
     - name: migrate database
-      run: ssh ka1ryu@34.83.27.41 -o 'StrictHostKeyChecking no' ’touch hoge.py’
+      run: ssh ka1ryu@34.83.27.41 -o 'StrictHostKeyChecking no' 'touch hoge.py'
