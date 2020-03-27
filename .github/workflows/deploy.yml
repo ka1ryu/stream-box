@@ -18,8 +18,8 @@ jobs:
         public-key: ${{ secrets.SSH_KEY_PUBLIC }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }} # 省略可
         name: streambox-instance1-ssh
-    - name: ssh key generate
-      run: echo ”$SSH_PRIVATE_KEY” ＞ key ＆＆ chmod 600 key
+    - name: ssh keygen
+      run: ssh-keygen -R ka1ryu
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
     - name: migrate database
