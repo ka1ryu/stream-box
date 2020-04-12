@@ -22,4 +22,4 @@ jobs:
     - uses: actions/checkout@master
     - name: auto-deploy
       if: github.event.pull_request.merged == true
-      run: ssh ka1ryu@34.83.27.41 -i ~/.ssh/testpem 'touch hoge.py'
+      run: ssh ka1ryu@34.83.27.41 -o 'StrictHostKeyChecking=no' -i ~/.ssh/testpem 'touch hoge.py'
