@@ -1,0 +1,66 @@
+version: '3.7'
+
+volumes:
+  sugoi_socket:
+
+networks:
+  overlay:
+      
+services:
+  nginx:
+    image: nginx:1.13
+    ports:
+      - "80:80"
+    networks:
+      - overlay
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: global
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./static:/static
+      - ./nginx/log:/var/log/nginx
+      - sugoi_socket:/var/run
+    environment:
+      - SERVER_NAME='127.0.0.1'
+      - ENV_INFO=${ENV}
+    command: /bin/sh -c "envsubst '$$SERVER_NAME $$ENV_INFO' < /etc/nginx/conf.d/mysite_nginx.conf.template > /etc/nginx/conf.d/mysite_nginx.conf && nginx -g 'daemon off;'"
+    depends_on:
+      - web
+
+  mysql:
+    image: db:1.0.0
+    build: ./sql
+    ports:
+      - 3306:3306
+    networks:
+      - overlay
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      TZ: 'Asia/Tokyo'
+    command:
+      mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./sql/mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+
+  web:
+    image: web:1.0.0
+    build: ./web
+    command: uwsgi --ini /code/sugoi_site/django.ini
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    networks:
+      - overlay
+    volumes:
+      - ./src:/code
+      - ./static:/static
+      - sugoi_socket:/var/run
+    depends_on:
+      - mysql

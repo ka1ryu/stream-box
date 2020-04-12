@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja" class="has-navbar-fixed-top">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stream Box - おすすめのゲーム実況者ランキングから探す -</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  {% load static %}
+  <script src="{% static 'static.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'static.css' %}">
+  <link rel="shortcut icon" href="{% static 'favicon3.png' %}" type="image/png">
+</head>
+
+<body>
+  <!-- header -->
+  <div class="container">
+    <nav class="navbar is-fixed-top soft-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="http://127.0.0.1:8000/">
+          <img src="{% static 'banner2.jpg' %}">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+          data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item">
+            Search
+          </a>
+
+          <a class="navbar-item" href="http://127.0.0.1:8000/about/">
+            About
+          </a>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- breadcumb -->
+  <div class="container" style="margin: 1rem 1.5rem;">
+    <nav class="breadcrumb has-succeeds-separator is-small" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="#">Bulma</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Components</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- hero -->
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <img class="concept" src="{% static 'concept2.png' %}">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Concept
+        </h1>
+      </div>
+    </div>
+  </section>
+  <!-- main contents -->
+  <section class="section" style="height: 100%;">
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="content">
+          <p>
+            Stream BoxではYoutube上のゲーム実況動画や実況者を見つけることができます。<br>
+            <span class="has-text-weight-semibold">楽にYoutube内の検索では見つからなかった面白い実況者を探せるサイトがほしい</span>
+            と思い、ゲーム実況動画などを集計しまとめてみることにしました。
+          </p>
+          <p>
+
+          </p>
+          <h2 class="has-text-centered">Evaluation</h2>
+          <p>
+            Stream BoxではYoutubeでの再生数やコメント数といった統計情報を利用しています。<br>
+            これらをチャンネル別、動画別に各ゲームカテゴリなどの項目で集計しランキング化していく予定です。<br>
+            また、その他おすすめといった項目では以下の観点からも評価を検討しています。
+          </p>
+          <ul>
+            <li>サイト運営者の独断と偏見によるおすすめ</li>
+            <li>ゲーム自体の人気度合い</li>
+            <li>実況者のプレイスキル</li>
+            <li>動画内でのトーク</li>
+          </ul>
+          <p>
+            とはいえ、運営者だけでは星の数ほどいる実況者を全て網羅することはできません。<br>
+            そのためおすすめの実況者やプレイ動画があれば、以下のコンタクトフォームより教えていただければ幸いです。<br>
+            サイト内にデータが無かった場合追加します。
+          </p>
+
+          <h2 class="has-text-centered">About Us</h2>
+          <table class="table is-fullwidth">
+            <thead>
+              <th></th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>運営者</th>
+                <td>
+                  <a href="https://twitter.com/kairyu_st" rel="nofollow" target="blank">カイリュー</a>
+                </td>
+              </tr>
+              <tr>
+                <th>好きなゲーム</th>
+                <td>
+                  <p>KH3, fps諸々</p>
+                </td>
+              </tr>
+              <tr>
+                <th>一言</th>
+                <td>
+                  <p>
+                    暇つぶしで見てられる動画やアホみたいな実況動画をおすすめできるようにサイトを作ります。<br>
+                    最近はスマブラかFortniteの実況動画を見てます。
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <th></th>
+              <th></th>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="content">
+          <h2 class="has-text-centered">
+            Contact Us
+          </h2>
+        </div>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Text input">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+          <p class="help is-success">This username is available</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help is-danger">This email is invalid</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Subject</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Textarea"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox">
+              I agree to the <a href="#">terms and conditions</a>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="question">
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="question">
+              No
+            </label>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
