@@ -7,3 +7,8 @@ sql/mysql_data/ib_buffer_pool
 sql/mysql_data/ib_logfile0
 sql/mysql_data/ibdata1
 src/sugoi_site/uwsgi.log
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.viminfo
