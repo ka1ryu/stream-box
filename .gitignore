@@ -1,5 +1,6 @@
 secret_settings.py
 .DS_Store
+mysite_nginx.conf
 nginx/log/access.log
 nginx/log/error.log
 sql/mysql_data/ib_buffer_pool
