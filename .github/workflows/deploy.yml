@@ -1,11 +1,7 @@
-# Controls when the action will run. Triggers the workflow on push or pull request 
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+on: pull_request:
+    tupes: closed
+    branches:
+        - 'master'
 name: Deploy
 jobs:
   deploy:
@@ -22,5 +18,7 @@ jobs:
       run: ssh-keygen -R 34.83.27.41
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-    - name: migrate database
-      run: ssh ka1ryu@34.83.27.41 -i ~/.ssh/testpem -o 'StrictHostKeyChecking no' 'touch hoge.py'
+    - uses:actions/checkout@master
+    - name: auto-deploy
+      if: github.event.pull_request.merged == true
+      run: ssh ka1ryu@34.83.27.41 -i ~/.ssh/testpem 'touch hoge.py'
