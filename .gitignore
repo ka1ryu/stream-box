@@ -1,2 +1,5 @@
 secret_settings.py
 .DS_Store
+error.log
+access.log
+uwsgi.log
