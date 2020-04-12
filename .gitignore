@@ -3,3 +3,4 @@ secret_settings.py
 error.log
 access.log
 uwsgi.log
+mysite_nginx.conf
