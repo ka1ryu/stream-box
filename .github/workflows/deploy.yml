@@ -1,7 +1,9 @@
-on: pull_request:
-    types: closed
-    branches:
-        - 'master'
+on: 
+    pull_request:
+        types: closed
+        branches:
+            - 'master'
+ 
 name: Deploy
 jobs:
   deploy:
@@ -18,7 +20,7 @@ jobs:
       run: ssh-keygen -R 34.83.27.41
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-    - uses:actions/checkout@master
+    - uses: actions/checkout@master
     - name: auto-deploy
       if: github.event.pull_request.merged == true
       run: ssh ka1ryu@34.83.27.41 -i ~/.ssh/testpem 'touch hoge.py'
