@@ -1,5 +1,5 @@
 on: pull_request:
-    tupes: closed
+    types: closed
     branches:
         - 'master'
 name: Deploy
