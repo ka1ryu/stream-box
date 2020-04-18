@@ -25,9 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+HOST = os.environ.get('HOST')
+ENV = os.environ.get('ENV')
 
-ALLOWED_HOSTS = []
+if (ENV == 'prod'):
+    DEBUG = False
+    ALLOWED_HOSTS = ['{HOST}']
+else:
+    DEBUG = True
+    ALLOWED_HOSTS = []
 PAGE_PER_ITEM = 5
 
 # Application definition

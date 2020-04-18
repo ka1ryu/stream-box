@@ -24,8 +24,8 @@ services:
       - ./nginx/log:/var/log/nginx
       - sugoi_socket:/var/run
     environment:
-      - SERVER_NAME='127.0.0.1'
-      - ENV_INFO=${ENV}
+      - SERVER_NAME='${HOST:-streambox.studio}'
+      - ENV_INFO=${ENV:-prod}
     command: /bin/sh -c "envsubst '$$SERVER_NAME $$ENV_INFO' < /etc/nginx/conf.d/mysite_nginx.conf.template > /etc/nginx/conf.d/mysite_nginx.conf && nginx -g 'daemon off;'"
     depends_on:
       - web
