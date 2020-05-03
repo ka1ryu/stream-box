@@ -1,8 +1,0 @@
-secret_settings.py
-.DS_Store
-/nginx/log/access.log
-/nginx/log/error.log
-/sql/mysql_data/ib_buffer_pool
-/sql/mysql_data/ib_logfile0
-/sql/mysql_data/ibdata1
-/src/sugoi_site/uwsgi.log
