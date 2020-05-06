@@ -6,7 +6,8 @@ mysite_nginx.conf
 *.pot
 *.pyc
 *.pem
-/sql/mysql_data/ib_buffer_pool
+sql/mysql_data/ibtmp1
+sql/mysql_data/ib_buffer_pool
 sql/mysql_data/ib_logfile0
 sql/mysql_data/ibdata1
 src/sugoi_site/uwsgi.log
