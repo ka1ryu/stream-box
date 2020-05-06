@@ -1,4 +1,5 @@
 secret_settings.py
+__pycache__
 .DS_Store
 mysite_nginx.conf
 *.log

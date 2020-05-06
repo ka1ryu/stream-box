@@ -90,28 +90,15 @@
       <div class="field">
         <label class="label">Name</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Text input">
+          <input class="input" type="text" placeholder="実況 太郎" id="formName">
         </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Text input" value="bulma">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
-        </div>
-        <p class="help is-success">This username is available</p>
+        <p class="form-name-info is-danger help"></p>
       </div>
 
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+          <input class="input" type="email" placeholder="mail@streambox.studio" required id="formEmail">
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -119,16 +106,18 @@
             <i class="fas fa-exclamation-triangle"></i>
           </span>
         </div>
-        <p class="help is-danger">This email is invalid</p>
+        <p class="form-email-info is-danger help"></p>
       </div>
 
       <div class="field">
         <label class="label">Subject</label>
         <div class="control">
           <div class="select">
-            <select>
+            <select id="formSubject">
               <option>Select dropdown</option>
-              <option>With options</option>
+              <option value="サイト運営について">サイト運営について</option>
+              <option value="質問">質問</option>
+              <option value="実況者の追加希望">実況者の追加希望</option>
             </select>
           </div>
         </div>
@@ -137,11 +126,12 @@
       <div class="field">
         <label class="label">Message</label>
         <div class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
+          <textarea class="textarea" placeholder="ご要望を記載してください。※1000字まで" maxlength="1000" id="formMessage"></textarea>
         </div>
+        <p class="form-message-info is-danger help"></p>
       </div>
 
-      <div class="field">
+      <div class="field" style="display: none;">
         <div class="control">
           <label class="checkbox">
             <input type="checkbox">
@@ -150,26 +140,11 @@
         </div>
       </div>
 
-      <div class="field">
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="question">
-            Yes
-          </label>
-          <label class="radio">
-            <input type="radio" name="question">
-            No
-          </label>
-        </div>
-      </div>
-
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link">Submit</button>
+          <button class="button is-link contact-form-button">Submit</button>
         </div>
-        <div class="control">
-          <button class="button is-link is-light">Cancel</button>
-        </div>
+        <p class="form-complete is-right"></p>
       </div>
     </div>
   </div>
