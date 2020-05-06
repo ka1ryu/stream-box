@@ -30,7 +30,7 @@ ENV = os.environ.get('ENV')
 
 if (ENV == 'prod'):
     DEBUG = False
-    ALLOWED_HOSTS = ['{HOST}']
+    ALLOWED_HOSTS = ['streambox.studio']
 else:
     DEBUG = True
     ALLOWED_HOSTS = []

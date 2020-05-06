@@ -58,6 +58,9 @@ services:
         condition: on-failure
     networks:
       - overlay
+    environment:
+      - HOST='${HOST:-streambox.studio}'
+      - ENV=${ENV:-prod}
     volumes:
       - ./src:/code
       - ./static:/static
