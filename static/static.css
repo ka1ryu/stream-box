@@ -50,7 +50,7 @@
 }
 
 .grid-auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 0.3fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 0.3fr));
 }
 
 
@@ -71,12 +71,13 @@
   cursor: pointer;
   height: 100%;
 }
-.box-thumnail{
+.box-thumbnail{
   position: relative;
   margin: 8px;
 }
 .box-thumnail > img {
   border-radius: 6px;
+  max-width: 185px;
 }
 .box-label{
   position: absolute;
@@ -132,6 +133,10 @@
   .caption {
     position: relative;
     top: 0px;
+  }
+
+  .box-thumbnail {
+    text-align: center;
   }
 }
 
