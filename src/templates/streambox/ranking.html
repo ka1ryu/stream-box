@@ -4,7 +4,11 @@
 {% endblock %}
 {% block main-contents %}
 <div class="main-contents">
-  <h1 class="is-size-3 caption">人気ランキング</h1>
+  <h1 class="is-size-3 caption">おすすめのゲーム実況者ランキング
+    {% if breadcrumb.child_page %}
+    <span class="is-size-6">（{{breadcrumb.child_page}}）</span>
+    {% endif %}
+  </h1>
   <div class="tabs is-right">
     <ul>
       <li class="is-active"><a>Pictures</a></li>
@@ -19,7 +23,7 @@
       {% for record in page_obj %}
       <li class="item" style="list-style: none;">
         <a class="box-wrapper" href="/search/">
-          <div class="box-thumnail">
+          <div class="box-thumbnail">
             <img src={{record.thumnail_url}}>
           </div>
           <div class="box-info content is-small">
