@@ -3,11 +3,20 @@
 {% block bread-crumb %}
 {% include 'base/bread-crumb.html' %}
 {% endblock %}
+{% block title-meta-content %}
+<title>
+  StreamBox - StreamBoxについて
+</title>
+<meta name="description"
+  content="StreamBoxではおすすめのゲーム実況者をまとめています。Youtubeでは探しづらいゲーム実況・配信動画がを上げているチャンネルに絞って掲載予定です。今後はゲームカテゴリごとに集計するなど、気になるゲーム実況者を探せるような機能を追加していきます。">
+<meta name="keywords" content="ゲーム実況,配信,Youtuber,ランキング.おすすめ">
+<meta name="robots" content="index, follow">
+{% endblock title-meta-content %}
+
 {% block main-contents %}
 <!-- hero -->
 <section class="hero is-primary">
   <div class="hero-body">
-    <img class="concept" src="{% static 'concept2.png' %}">
     <div class="container has-text-centered">
       <h1 class="title">
         Concept
@@ -54,7 +63,7 @@
           </thead>
           <tbody>
             <tr>
-              <th>運営者</th>
+              <th style="min-width: 120px;">運営者</th>
               <td>
                 <a href="https://twitter.com/kairyu_st" rel="nofollow" target="blank">カイリュー</a>
               </td>
