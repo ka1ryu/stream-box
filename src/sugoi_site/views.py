@@ -14,7 +14,7 @@ def index(request):
     child_page = ''
 
     # ページネーション
-    youtubers = Channel.objects.all()
+    youtubers = Channel.objects.get_queryset().order_by('id')
     page_obj = paginate_query(request,youtubers, 25)
 
     
