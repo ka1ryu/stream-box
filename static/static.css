@@ -1,4 +1,6 @@
-
+/*
+base-template
+*/
   .navbar {
     padding: 0.3rem 1.5rem;
   }
@@ -12,6 +14,9 @@
     line-height: 2.125;
   }
 
+/*
+  /about
+*/
 .concept {
   height: auto;
   max-width: 100%;
@@ -19,16 +24,13 @@
   top: 0px;
   right: 150px;
 }
-
+/*
+  ranking
+*/
 .main-contents {
   padding: 1.5rem 5rem;
   display: block;
   position: relative;
-}
-
-.caption {
-  position: absolute;
-  top: 0px;
 }
 
 .section {
@@ -103,6 +105,55 @@
   margin: 0 auto;
 }
 
+/*
+  404
+*/
+.error-wrap {
+  position: relative;
+  width: 100vw;
+  height: 75vh;
+}
+
+.error-box{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 70%;
+  height: 60%;
+  display: flex;
+}
+.error-img {
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+
+.error-img img {
+  position: absolute;
+  top: 35%;
+}
+
+.error-message-box {
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.error-message {
+  position: absolute;
+  top: 50%;
+  -webkit-transform : translateY(-50%);
+  transform : translateY(-50%);
+}
+
+
+
 @media screen and (max-width: 480px) {
   .navbar {
     padding: 0 0;
@@ -138,6 +189,50 @@
   .box-thumbnail {
     text-align: center;
   }
+
+  .breadcrumb ul {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    overflow: auto;
+    white-space: nowrap;
+    flex-wrap: inherit;
+  }
+
+  .error-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 60%;
+    display: block;
+  }
+  .error-img {
+    display: block;
+    height: 50%;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .error-message-box {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .error-img img {
+    position: absolute;
+    top: 0%;
+  }
+  
+  .error-message-box{
+    padding: 2rem 1rem;
+  }
+
 }
 
 

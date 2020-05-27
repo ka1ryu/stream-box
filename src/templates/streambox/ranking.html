@@ -1,4 +1,15 @@
 {% extends 'base/base.html' %}
+{% load humanize %}
+
+{% block title-meta-content %}
+<title>
+  StreamBox - おすすめのゲーム実況者ランキング {% if breadcrumb.child_page %} {{breadcrumb.child_page}} {% endif %}
+</title>
+<meta name="description"
+  content="おすすめのゲーム実況者ランキング{% if breadcrumb.child_page %} {{breadcrumb.child_page}} {% endif %}！人気Youtuberやゲーム配信をする皆さんをランキング形式でまとめています。再生数や動画投稿数などをゲームカテゴリ別で見れるようにしていきます。">
+<meta name="keywords" content="ゲーム実況,配信,Youtuber,ランキング.おすすめ">
+<meta name="robots" content="index, follow">
+{% endblock title-meta-content %}
 {% block bread-crumb %}
 {% include 'base/bread-crumb.html' %}
 {% endblock %}
@@ -9,7 +20,7 @@
     <span class="is-size-6">（{{breadcrumb.child_page}}）</span>
     {% endif %}
   </h1>
-  <div class="tabs is-right">
+  <div class="tabs is-right" style="display: none;">
     <ul>
       <li class="is-active"><a>Pictures</a></li>
       <li><a>Music</a></li>
@@ -22,7 +33,7 @@
     <ul class="box-list grid-auto-fill">
       {% for record in page_obj %}
       <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/search/">
+        <a class="box-wrapper" href="https://youtube.com/channel/{{record.channel_id}}/" rel="nofollow" target="_blank">
           <div class="box-thumbnail">
             <img src={{record.thumnail_url}}>
           </div>
@@ -31,14 +42,14 @@
             <div class="box-info-data">
               <div class="data-block">
                 <span class="tag is-light">視聴回数</span>
-                <span>{{record.total_view}}</span>
+                <span>{{record.total_view| intcomma}}</span>
                 <span class="tag is-light">登録者数</span>
-                <span>{{record.subscriber_num}}</span>
+                <span>{{record.subscriber_num| intcomma}}</span>
               </div>
             </div>
             <div class="box-info-data">
               <span class="tag is-light">投稿本数</span>
-              <span>{{record.total_video}}</span>
+              <span>{{record.total_video| intcomma}}</span>
             </div>
         </a>
       </li>

@@ -1,12 +1,26 @@
 {% extends 'base/base.html' %}
+{% load humanize %}
+
+{% block title-meta-content %}
+<title>
+  StreamBox - おすすめのゲーム実況者が見つかる {% if breadcrumb.child_page %} {{breadcrumb.child_page}} {% endif %}
+</title>
+<meta name="description"
+  content="おすすめの{% if breadcrumb.child_page %} {{breadcrumb.child_page}}。 {% endif %}Youtubeでゲーム実況や配信をしている人をランキング形式でまとめています。再生数や投稿数をカテゴリ別で見ることができるので、気になるゲームでおすすめの実況者が見つかる。">
+<meta name="keywords" content="ゲーム実況,配信,Youtuber,ランキング.おすすめ">
+<meta name="robots" content="index, follow">
+{% endblock title-meta-content %}
 {% block bread-crumb %}
 {% include 'base/bread-crumb.html' %}
 {% endblock %}
 {% block main-contents %}
-<!-- main contents -->
 <div class="main-contents">
-  <h1 class="is-size-3 caption">人気ランキング</h1>
-  <div class="tabs is-right">
+  <h1 class="is-size-3 caption">おすすめのゲーム実況者まとめ
+    {% if breadcrumb.child_page %}
+    <span class="is-size-6">（{{breadcrumb.child_page}}）</span>
+    {% endif %}
+  </h1>
+  <div class="tabs is-right" style="display: none;">
     <ul>
       <li class="is-active"><a>Pictures</a></li>
       <li><a>Music</a></li>
@@ -15,175 +29,36 @@
     </ul>
   </div>
   <div class="">
+    {% if page_obj %}
     <ul class="box-list grid-auto-fill">
+      {% for record in page_obj %}
       <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
+        <a class="box-wrapper" href="https://youtube.com/channel/{{record.channel_id}}/" rel="nofollow" target="_blank">
           <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
+            <img src={{record.thumnail_url}}>
           </div>
           <div class="box-info content is-small">
-            <h3 style="margin-bottom: 5px;">はじめしゃちょー</h3>
+            <h3 style="margin-bottom: 0.5rem;">{{record.title}}</h3>
             <div class="box-info-data">
               <div class="data-block">
                 <span class="tag is-light">視聴回数</span>
-                <span>3.5億</span>
+                <span>{{record.total_view| intcomma}}</span>
                 <span class="tag is-light">登録者数</span>
-                <span>5000万</span>
+                <span>{{record.subscriber_num| intcomma}}</span>
               </div>
             </div>
             <div class="box-info-data">
               <span class="tag is-light">投稿本数</span>
-              <span>50万</span>
+              <span>{{record.total_video| intcomma}}</span>
             </div>
-
         </a>
       </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
-      <li class="item" style="list-style: none;">
-        <a class="box-wrapper" href="/about">
-          <div class="box-thumbnail">
-            <img
-              src="https://www.img-ikyu.com/contents/common/image/acc6/00000946/4/lg/10781747.jpg?auto=compress,format&lossless=0">
-          </div>
-          <div class="box-info">
-            <h3>hoge</h3>
-            <span>title</span>
-          </div>
-        </a>
-      </li>
+      {% endfor %}
     </ul>
+    {% else %}
+    <p>No records are available.</p>
+    {% endif %}
   </div>
 </div>
+{% include 'base/pagenation.html' %}
 {% endblock main-contents%}

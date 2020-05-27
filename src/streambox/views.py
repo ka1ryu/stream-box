@@ -2,6 +2,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Channel
+from django.http import Http404
 
 
 # Create your views here.
@@ -18,9 +19,12 @@ def ranking(request):
     
     # パンくず情報
     if page_num:
+      try:
         ranking_num = int(page_num) * 25
         child_page = f'{ranking_num - 24}位 ~ {ranking_num}位'
         level = 3
+      except:
+        raise Http404
     else:
         level = 2
     
@@ -50,5 +54,5 @@ def paginate_query(request, queryset, count):
   except PageNotAnInteger:
     page_obj = paginator.page(1)
   except EmptyPage:
-    page_obj = paginator.page(paginator.num_pages)
+    raise Http404
   return page_obj
