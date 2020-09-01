@@ -8,7 +8,7 @@ upstream django {
 server {
     listen       80 default_server;
     server_name  _;
-    return       444;
+    return       403;
 }
 
 # configuration of the server
@@ -46,6 +46,15 @@ server {
         uwsgi_pass  django;
         include     /etc/nginx/uwsgi_params; # the uwsgi_params file you installed
     }
+
+    # security
+    location = /xmlrpc.php {
+        return 403;
+    }
+
+    server_tokens off;
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 }
 
 server {
